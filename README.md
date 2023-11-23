@@ -47,6 +47,16 @@ print(f"El valor final del préstamo después de {num_meses} meses es: {valor_fi
 ```
 # 6. El número de contagiados de Covid-19 en el país de NuncaLandia se duplica cada día. Hacer un programa que diga el número total de personas que se han contagiado cuando pasen D días a partir de hoy, si el número de contagiados actuales es C.
 ```
+def calcular_contagiados_actuales(C, D):
+    contagiados_futuros = C * 2**D
+    return contagiados_futuros
+
+contagiados_actuales = 50
+dias_pasados = 5
+
+contagiados_futuros = calcular_contagiados_actuales(contagiados_actuales, dias_pasados)
+print(f"Después de {dias_pasados} días, el número total de contagiados será: {contagiados_futuros}")
+
 ```
 # 7. Escriba un programa que pida 5 números reales y calcule las siguientes operaciones usando una función para cada una:
 -El promedio
