@@ -15,10 +15,35 @@ print(f"La cantidad total de carne de aves es: {cantidad_total} kilos.")
 ```
 # 4. Mi mamá me manda a comprar P panes a 300 cada uno, M bolsas de leche a 3300 cada una y H huevos a 350 cada uno. Hacer un programa que me diga las vueltas (o lo que quedo debiendo) cuando me da un billete de B pesos.
 ```
+def calcular_vueltas(B, P, M, H):
+    total_compra = P * 300 + M * 3300 + H * 350
+    vueltas = B - total_compra
+    return vueltas
+
+
+billete = 50000
+panes = 5
+bolsas_leche = 2
+huevos = 12
+
+vueltas = calcular_vueltas(billete, panes, bolsas_leche, huevos)
+print(f"Las vueltas (o lo que queda debiendo) son: {vueltas} pesos.")
+
 ```
 
 # 5. Haga un programa que utilice una función para calcular el valor de un préstamo C usando interés compuesto del i por n meses.
 ```
+def calcular_valor_prestamo(C, i, n):
+    valor_final = C * (1 + i)**n
+    return valor_final
+
+prestamo_inicial = 60000
+tasa_interes = 0.05
+num_meses = 12
+
+valor_final_prestamo = calcular_valor_prestamo(prestamo_inicial, tasa_interes, num_meses)
+print(f"El valor final del préstamo después de {num_meses} meses es: {valor_final_prestamo}")
+
 ```
 # 6. El número de contagiados de Covid-19 en el país de NuncaLandia se duplica cada día. Hacer un programa que diga el número total de personas que se han contagiado cuando pasen D días a partir de hoy, si el número de contagiados actuales es C.
 ```
