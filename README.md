@@ -1,4 +1,64 @@
-# Repo-6 
+# Repo 6 
+
+# 1. Respecto a la Figura1 :
+-Una función matemática para calcular el volumen y el área superficial.
+-Cree dos funciones en python para calcular los valores antes establecidos, al ingresar por teclado r1, r2 y h.
+-Revise como utilizar el valor de pi usando import math y math.pi
+```
+import math
+def calcular_volumenYareaS(r1, r2, h):
+    volumen_esfera = (4 / 3) * math.pi * r1 ** 3
+    area_superficial_esfera = 4 * math.pi * r1 ** 2
+    volumen_cono = (1 / 3) * math.pi * r2 ** 2 * h
+    area_superficial_cono = math.pi * r2 * (r2 + math.sqrt(r2 ** 2 + h ** 2))
+    return {
+      "volumen_esfera": volumen_esfera,
+      "area_superficial_esfera": area_superficial_esfera,
+      "volumen_cono": volumen_cono,
+      "area_superficial_cono": area_superficial_cono,
+  }
+def datos():
+  r1 = float(input("Introduce el radio de la esfera: "))
+  r2 = float(input("Introduce el radio de la base del cono: "))
+  h = float(input("Introduce la altura del cono: "))
+  return r1, r2, h
+r1, r2, h = datos()
+resultado = calcular_volumenYareaS(r1, r2, h)
+print(resultado)
+```
+
+
+# 2. Respecto a la figura 2:
+-Una función matemática para calcular el área y el perimetro.
+-Cree dos funciones en python para calcular los valores antes establecidos, al ingresar por teclado r, a y b.
+-Revise como utilizar el valor de pi usando import math y math.pi
+```
+import math
+def calcular_area_y_perimetro_circulo(r):
+  area_circulo = math.pi * r ** 2
+  perimetro_circulo = 2 * math.pi * r
+  return {
+      "area_circulo": area_circulo,
+      "perimetro_circulo": perimetro_circulo,
+  }
+def calcular_area_y_perimetro_rectangulo(a, b):
+  area_rectangulo = a * b
+  perimetro_rectangulo = 2 * (a + b)
+  return {
+      "area_rectangulo": area_rectangulo,
+      "perimetro_rectangulo": perimetro_rectangulo,
+  }
+def calcular_area_y_perimetro_cuadrado(a):
+  return calcular_area_y_perimetro_rectangulo(a, a)
+r = float(input("Introduce el radio del círculo: "))
+resultado_circulo = calcular_area_y_perimetro_circulo(r)
+print(resultado_circulo)
+a = float(input("Introduce el ancho del rectángulo: "))
+b = float(input("Introduce el alto del rectángulo: "))
+resultado_rectangulo = calcular_area_y_perimetro_rectangulo(a, b)
+print(resultado_rectangulo)
+```
+
 # 3. Diseñe una función que calcule la cantidad de carne de aves en kilos si se tienen N gallinas, M gallos y K pollitos cada uno pesando 6 kilos, 7 kilos y 1 kilo respectivamente.
 ```
 def calcular_cantidad_carne(N, M, K):
@@ -67,7 +127,67 @@ print(f"Después de {dias_pasados} días, el número total de contagiados será:
 -La potencia del mayor número elevado al menor número
 -La raíz cúbica del menor número
 ```
+def calcular_promedio(lista_numeros):
+    return sum(lista_numeros) / len(lista_numeros)
+
+def calcular_mediana(lista_numeros):
+    lista_ordenada = sorted(lista_numeros)
+    n = len(lista_numeros)
+    if n % 2 == 0:
+        medio_1 = lista_ordenada[n // 2 - 1]
+        medio_2 = lista_ordenada[n // 2]
+        return (medio_1 + medio_2) / 2
+    else:
+        return lista_ordenada[n // 2]
+
+def calcular_promedio_multiplicativo(lista_numeros):
+    producto = 1
+    for numero in lista_numeros:
+        producto *= numero
+    return producto**(1/len(lista_numeros))
+
+def ordenar_ascendente(lista_numeros):
+    return sorted(lista_numeros)
+
+def ordenar_descendente(lista_numeros):
+    return sorted(lista_numeros, reverse=True)
+
+def potencia_mayor_menor(lista_numeros):
+    return max(lista_numeros)**min(lista_numeros)
+
+def raiz_cubica_menor(lista_numeros):
+    return min(lista_numeros)**(1/3)
+
+numeros = []
+for i in range(5):
+    numero = float(input(f"Ingrese el número {i + 1}: "))
+    numeros.append(numero)
+
+promedio = calcular_promedio(numeros)
+mediana = calcular_mediana(numeros)
+promedio_multiplicativo = calcular_promedio_multiplicativo(numeros)
+ascendente = ordenar_ascendente(numeros)
+descendente = ordenar_descendente(numeros)
+potencia = potencia_mayor_menor(numeros)
+raiz_cubica = raiz_cubica_menor(numeros)
+
+
+print(f"El promedio es: {promedio}")
+print(f"La mediana es: {mediana}")
+print(f"El promedio multiplicativo es: {promedio_multiplicativo}")
+print(f"Números ordenados de forma ascendente: {ascendente}")
+print(f"Números ordenados de forma descendente: {descendente}")
+print(f"La potencia del mayor elevado al menor es: {potencia}")
+print(f"La raíz cúbica del menor número es: {raiz_cubica}")
+
 ```
-# 8. Para el punto anterior incluir las funciones en un archivo independiente e importarlas para su uso.
-```
-```
+# 9. Consultar qué es y cómo funciona pip en python:
+Pip en python es un sistema de gestión de paquetes utilizado para instalar y administrar paquetes de software escritos en Python y descargarlos a nuestra computadora con la finalidad de integrarlos a nuestros desarrollos realizado en python
+
+# 10. Hacer un listado de módulos populares para python que se puedan instalar com pip y consultar cómo instalarlos.
+
+-NumPy es una biblioteca para cálculo numérico. Proporciona una estructura de datos de matriz multidimensional y funciones para realizar operaciones matemáticas y estadísticas en matrices. pip install numpy
+-SciPy es una biblioteca para ciencia e ingeniería. Proporciona una amplia gama de funciones para el análisis de datos, la simulación numérica y el aprendizaje automático. pip install scipy
+-Pandas es una biblioteca para análisis de datos. Proporciona estructuras de datos y herramientas para manipular y analizar datos tabulados. pip install pandas
+-Matplotlib es una biblioteca para visualización de datos. Proporciona funciones para crear gráficos y diagramas. pip install matplotlib
+
